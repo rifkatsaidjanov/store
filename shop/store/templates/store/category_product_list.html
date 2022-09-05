@@ -1,0 +1,42 @@
+{% extends 'base.html'  %}
+
+{% block main %}
+
+<main>
+    <!-- SALES BLOCK START -->
+    {% include 'store/components/_sales.html' %}
+    <!-- SALES BLOCK END -->
+
+    <section class="category_products">
+        <!-- PRODUCTS FILTER START -->
+        <div class="products_filter">
+            <div class="container">
+                <div class="row justify-content-around">
+                    {% include 'store/components/_dropdown_filter.html' %}
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCTS FILTER END -->
+
+        <!-- PRODUCTS BLOCK START -->
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+                    {% include 'store/components/_product_card.html' %}
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- PRODUCTS BLOCK END -->
+
+        <!-- PAGINATION START -->
+
+        <!-- PAGINATION END -->
+    </section>
+</main>
+
+{% endblock main %}

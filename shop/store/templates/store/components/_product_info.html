@@ -1,0 +1,32 @@
+<div class="product_detail-info">
+    <h2 class="product_detail-title">{{ product.name }}</h2>
+    <p class="product_detail-desc">{{ product.description }}</p>
+    <p class="product_detail-price">${{ product.price }}</p>
+
+    {% comment details %}
+    <ul class="product_detail-characteristic">
+        <li class="product_detail-characteristic_item d-flex justify-content-between">
+            <span>Size (mm)</span>
+            <span>30</span>
+        </li>
+        <li class="product_detail-characteristic_item d-flex justify-content-between">
+            <span>Colour</span>
+            <span>Golden</span>
+        </li>
+        <li class="product_detail-characteristic_item d-flex justify-content-between">
+            <span>Watch type</span>
+            <span>Quartz Edition</span>
+        </li>
+        <li class="product_detail-characteristic_item d-flex justify-content-between">
+            <span>Details</span>
+        </li>
+    </ul>
+    {% endcomment %}
+</div>
+
+{% if product.quantity > 0 %}
+<p class="product_detail-guarantee">Возврат 30 дней, бесплатная доставка</p>
+<button class="product_detail-buy_btn">В корзину</button>
+{% else %}
+<p class="product_detail-guarantee">Нет в наличии</p>
+{% endif %}

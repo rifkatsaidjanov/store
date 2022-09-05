@@ -1,0 +1,35 @@
+{% load store_tags %}
+
+
+
+<div class="header_panel">
+    <div class="header_panel-item">
+        <form action="{% url 'search' %}" method="get" class="form-inline d-flex" style="height:100%;">
+            <input type="search" placeholder="Поиск" name="q" class="form-control mr-sm-2">
+            <button class="btn" type="submit" style="margin: 0 10px; padding: 0">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+
+    </div>
+    <div class="header_panel-item d-flex align-items-center">
+        {% get_cart_product_quantity request as cart_products_quantity %}
+        <a href="{% url 'cart' %}" class="text-white">
+            <i class="fas fa-shopping-cart"></i>
+             <span class="badge bg-primary rounded-pill">{{ cart_products_quantity }}</span>
+        </a>
+
+    </div>
+
+    <div class="header_panel-item d-flex align-items-center">
+        <a {% if request.user.is_authenticated %}
+           href="{% url 'profile' %}"
+           {% else %}
+           href="{% url 'user_form' %}"
+           {% endif %}
+           class="text-white">
+            <i class="far fa-user"></i>
+        </a>
+
+    </div>
+</div>

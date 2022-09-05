@@ -1,0 +1,39 @@
+<!--xamma kodlar shu saxifada edi-->
+<!--xar doim birinchi base.html kesin-->
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+TOTEMBO
+{% endblock title %}
+
+
+{% block main %}
+<main>
+    {% include 'store/components/_guarantees.html' %}
+
+    {% for category in categories %}
+        <!-- view dagi ProductList ni ichidagi context_object_name ga yozilgan categories ni for qib chiqyapdi-->
+    <section class="products-section">
+        <h2 class="main_title text-center" style="border-bottom: 1px solid black">{{ category.title }}</h2>
+        <div class="container">
+            <div class="row">
+                {% for product in category.products %}
+                <!--tepada for qigan categoryimiz bo'yicha products ni for qilyapmiz-->
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    {% include 'store/components/_product_card.html' %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+    </section>
+    {% endfor %}
+    {% include 'store/components/_slider.html' %}
+    {% include 'store/components/_email_form.html' %}
+
+</main>
+{% endblock main %}
+
+

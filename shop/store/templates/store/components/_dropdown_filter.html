@@ -1,0 +1,21 @@
+{% load store_tags %}
+{% get_sorters as data %}
+
+{% for filter in data %}
+    <div class="dropdown pt-2 pt-lx-0">
+        <button class="products_filter-dropdown dropdown-toggle"
+                type="button"
+                id="dropdownColor"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+            {{ filter.title }}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownColor">
+            {% for sorter in filter.sorters %}
+                <li>
+                    <a class="dropdown-item" href="?sorter={{ sorter.0 }}">{{ sorter.1 }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}

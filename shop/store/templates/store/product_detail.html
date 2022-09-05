@@ -1,0 +1,45 @@
+<!--Bu qaysidir productni bosganda ochiladigan saxifa-->
+
+{% extends 'base.html' %}
+
+
+{% block main %}
+
+ <main>
+        <section class="product_detail">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        {% include 'store/components/_product_slider.html' %}
+                    </div>
+                    <div class="col-md-6">
+                            {% include 'store/components/_product_info.html' %}
+                    </div>
+                </div>
+            </div>
+        </section>
+            {% include 'store/components/_brand_info.html' %}
+            {% include 'store/components/_customer_reviews.html' %}
+        <div class="recommended_goods">
+            <h2 class="product_detail-main-title text-center">Вам также может понравиться</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+
+                       {% include 'store/components/_product_card.html' %}
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+        {% include 'store/components/_email_form.html' %}
+
+</main>
+
+{% endblock main %}

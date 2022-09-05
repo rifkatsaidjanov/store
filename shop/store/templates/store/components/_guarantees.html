@@ -1,0 +1,28 @@
+<!-- Katta rasmni tagidagi 3ta yozuv. Bu product_list.html dan keldi. -->
+
+{% load static %}
+
+<div class="container">
+    <div class="blocks_guarantees">
+        <div class="row justify-content-around">
+            <div class="col-auto">
+                <div class="blocks_guarantees-card d-flex align-items-center">
+                    <img src="{% static 'store/images/icons/shipping_icon.svg' %}" alt="">
+                    <p class="blocks_guarantees-desc mt-auto mb-auto">Бесплатная доставка</p>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="blocks_guarantees-card d-flex align-items-center">
+                    <img src="{% static 'store/images/icons/calendar_icon.svg' %}" alt="">
+                    <p class="blocks_guarantees-desc mt-auto mb-auto">Возврат в течение 30 дней</p>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="blocks_guarantees-card d-flex align-items-center mt-3 mt-md-0">
+                    <img src="{% static 'store/images/icons/warranty_icon.svg' %}" alt="">
+                    <p class="blocks_guarantees-desc mt-auto mb-auto">Гарантия 2 года</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

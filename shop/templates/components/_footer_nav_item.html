@@ -1,0 +1,14 @@
+{% load store_tags %}
+
+{% get_categories as categories %}
+
+<ul class="">
+    <li class="footer_nav-item_header">
+        <a class="footer_nav-link_header" href="">Магазин Totembo</a>
+    </li>
+    {% for category in categories %}
+    <li class="footer_nav-item">
+        <a class="footer_nav-link" href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

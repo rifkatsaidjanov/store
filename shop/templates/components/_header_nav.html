@@ -1,0 +1,21 @@
+{% load store_tags %}
+
+{% get_categories as categories %}
+
+<ul class="header_nav-menu d-flex justify-content-center flex-wrap text-center {% if 'category' in request.path %} border-dark {% endif %}">
+
+    {% for category in categories %}
+    <li class="header_nav-item">
+        <a class="header_nav-link " href="{{ category.get_absolute_url }}">{{ category.title }}</a>
+    </li>
+    {% endfor %}
+
+    <li class="header_nav-item mt-3 mt-lg-0">
+        <a class="header_nav-link " href="#">Контакты</a>
+    </li>
+    <li class="header_nav-item mt-3 mt-lg-0">
+        {% if not request.user.is_authenticated %}
+            <a class="header_nav-link " href="#">Создать аккаунт</a>
+        {% endif %}
+    </li>
+</ul>
